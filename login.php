@@ -1,17 +1,16 @@
 <?php
-if (isset($_POST['btn']))
+
+require 'function.php';
+
+
+
 if (!empty($_POST['login'])) {
     if (!empty($_POST['password'])) {
-        if (!empty($_POST['[password_repeat'])){
-           registration($_POST['login'], $_POST['password'], $_POST['password_repeat']);
-        } else {
-        echo 'Повторите пароль!';
-    }
-        }
+        login($_POST['login'], $_POST['password']);
     } else {
         echo 'Введите пароль!';
-}
-} else{
+    }
+} else {
     echo 'Введите логин!';
 }
 ?>
@@ -24,10 +23,6 @@ if (!empty($_POST['login'])) {
         Введите пароль: <br>
         <input type="password" name="password">
     </label>
-    <label style="display: block">
-        Повторите пароль: <br>
-        <input type="password" name="password_repeat">
-    </label>
-    <input type="submit" name="btn" value="Зарегистрироваться">
+    <input type="submit" name="btn" value="Авторизоваться!">
 </form>
-<a href="./login.php">Авторизоваться!</a>
+<a href="./registration.php">Зарегистрироваться!</a>
